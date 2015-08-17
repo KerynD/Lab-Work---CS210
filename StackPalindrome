@@ -1,0 +1,33 @@
+package Labs;
+import java.util.Scanner;
+public class StackPalindrome {
+	public static void main(String args[]){
+		Scanner in = new Scanner(System.in);
+		System.out.print("Please enter word to check: ");
+		String s = in.next();
+		Stack sta = new Stack(s);
+		
+		for(int i = 0;i<s.length();i++){
+	
+			int j = i+1;
+			String a = s.substring(i,j);
+			sta.push(a);
+		}
+		
+		boolean boo = false;
+		int count = 0;
+		for(int i = 0;i<s.length();i++){
+			int j=i+1;
+			String x = sta.pop();
+			if(x.equals(s.substring(i,j))){
+				 count++;
+			}		
+		}
+		if(count == s.length()){
+			System.out.println(s + " is a palindrome");
+		}
+		else{
+			System.out.println(s + " is not a palindrome");
+		}
+	}
+}
