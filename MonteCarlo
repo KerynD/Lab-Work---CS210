@@ -1,0 +1,30 @@
+package Labs;
+
+public class L3MonteCarlo {
+	
+	public static void main(String[] args){
+		
+	      Dice[] arrayD = new Dice[6];
+	      
+	      for(int i = 0; i<arrayD.length;i++)
+	      {
+	          arrayD[i] = new Dice();
+	      }
+	      
+	      int[] times = new int[31];
+
+	      int total = 0;
+	      
+	      for(int i = 0; i<=1000000; i++){
+	          total = 0;
+	          for(int j = 0; j<arrayD.length;j++){
+	          arrayD[j].roll();
+	          total = total + arrayD[j].getValue();
+	        }
+	        times[total]++;
+	    }
+	    for(int k = 0;k<times.length;k++){
+	        System.out.println(k + ":" + times[k]);
+	    }
+	  }
+}
