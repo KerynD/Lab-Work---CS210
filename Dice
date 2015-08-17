@@ -1,0 +1,18 @@
+package Labs;
+
+public class Dice {
+	
+	 private int num; 
+	 
+	  public Dice(){
+	      num = 0;
+	    }
+	    
+	  public void roll(){
+	      num = (int)(Math.random()*6)+1;
+	    }
+	    
+	  public int getValue(){
+	      return num;
+	    }
+}
