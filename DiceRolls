@@ -1,0 +1,45 @@
+package Labs;
+import java.util.Scanner;
+public class L4DiceRolls {
+	
+
+	public static void main(String[] args){
+		//Scanner scan= new Scanner(System.in);
+		//int n = scan.nextInt();
+for(int n=1;n<=100; n++){
+	      Dice[] arrayD = new Dice[6*n];
+	     
+	      for(int i = 0; i<arrayD.length;i++)
+	      {
+	          arrayD[i] = new Dice();
+	      }
+	      int[] results = new int[6];
+	      int result = 0;
+		     
+	   for(int s = 0; s<1000; s++){
+	      int times = 0;
+	      int v = 0;
+	      int x=0;
+	      while(v==0){
+	    	  for(int i = 0; i<results.length;i++)
+		      {
+		          results[i] = 0;
+		      }
+	    	   times++;
+	    	  for(int j = 0; j<arrayD.length;j++){
+	          arrayD[j].roll();
+	          x = arrayD[j].getValue();
+	          results[x-1]=results[x-1]+1;
+	    	  }
+	          	if(results[0]==n&&results[1]==n&&results[2]==n&&results[3]==n&&results[4]==n&&results[5]==n){
+	          		v++;
+	          	}
+	    	  
+	      }
+	      result = result+times;
+	    }
+	   System.out.println(n + " takes " + (result/1000) + " rolls");       
+}     
+}
+}
+
