@@ -1,0 +1,58 @@
+package Labs;
+
+public class Stack {
+
+
+	private int maxSize;
+	public String[] stackArray;
+	private int top;
+	
+	public Stack(String s){
+		maxSize = s.length();
+		stackArray = new String[maxSize];
+		top = -1;
+	}
+	
+	public void push(String j) { // put item on top of stack
+		top++;
+		stackArray[top] = j;
+		print(stackArray[top]);
+	} 
+	
+	public String pop() { // take item from top of stack
+		 //print(stackArray[top--]);
+		 return stackArray[top--]; //access item, decrement top
+		
+	} 
+	
+	public String peek() { // peek at top of stack
+		 print(stackArray[top]);
+		 return stackArray[top];
+		
+	} 
+	
+	public boolean isEmpty() { // true if stack is empty
+
+		 return (top == -1);
+		
+	} 
+			
+	public boolean isFull() { // true if stack is full
+ 
+		 return (top == maxSize-1);
+		
+	}
+	
+	public void makeEmpty() { // empty stack
+		 top=-1; 
+	}
+	
+	private void print(String a)  {
+		int x = maxSize-1;
+		for(int i =0; i<maxSize; i++){
+		System.out.println(" | " + stackArray[x] + " | ");
+		x--;
+		}
+		System.out.println();
+	}
+}
