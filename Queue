@@ -1,0 +1,40 @@
+
+public class Queue {
+
+
+    private LinkedList thelist;
+    private int size;
+    public int length=0;
+
+    public Queue(int sizein){
+  	  size = sizein;
+  	  thelist = new LinkedList(sizein);
+    }
+
+    public void insert(String name){
+  	  thelist.insertTail(name);
+  	  length++;
+    }
+
+    public String remove(){
+  	  length--;
+           return thelist.deleteHead();
+    }
+
+    public boolean isEmpty(){
+  	  if(length<=0){
+           return true;
+  	  }
+  	  else{
+  		 return false;  
+  	  }
+    }
+
+    public int getSize(){
+           return length;
+    }
+
+	public void printout(){
+		thelist.printLinkedList();
+	}
+}
