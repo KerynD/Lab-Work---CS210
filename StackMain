@@ -1,0 +1,24 @@
+package Labs;
+
+import java.util.Scanner;
+public class StackMain {
+	public static void main(String args[]){
+		Scanner in = new Scanner(System.in);
+		System.out.print("Please enter word to reverse: ");
+		String s = in.next();
+		Stack sta = new Stack(s);
+		
+		for(int i = 0;i<s.length();i++){
+	
+			int j = i+1;
+			String a = s.substring(i,j);
+			sta.push(a);
+		}
+		System.out.print("Reversed: ");
+		for(int i = 0;i<s.length();i++){
+			System.out.print(sta.pop());
+		}
+	}
+		
+}
+
