@@ -1,0 +1,45 @@
+package Labs;
+
+public class LinkedList {
+
+	
+	private Link first;
+	private Link last;
+	
+	public LinkedList(int sizein){
+		first=null;
+		last=null;
+	}
+	
+	public boolean isEmpty( ){
+		return (first==null);
+	}
+	
+	public void insertTail (String name) {
+		Link newLink = new Link(name);
+		newLink.next = null;
+		if(last!=null){
+		last.next = newLink;
+		}
+		if(first == null){
+			first=newLink;
+		}
+		last = newLink;
+		}
+
+	public String deleteHead () {
+	
+		Link temp =first;
+		first = first.next;
+		return temp.getLink();
+	}
+	
+	public void printLinkedList(){
+		Link p = first;
+		while(p != null){
+			System.out.print(p.getLink()+ " ");
+			p=p.next;
+
+		}
+	}
+}
